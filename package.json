@@ -1,0 +1,12 @@
+{
+  "name": "vuePress",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "wupengfei",
+  "license": "MIT",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "deploy-gh": "GH=1 bash scripts/deploy-gh.sh"
+  }
+}
