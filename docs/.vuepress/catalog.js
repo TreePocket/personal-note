@@ -12,7 +12,8 @@ const JsCatalog = {
     ['/frontend/JavaScript/Js中Require和import', 'Js中require和import区别'],
     ['/frontend/JavaScript/ES6+', 'ES6+'],
     ['/frontend/JavaScript/JavaScript数据结构和算法笔记', 'JavaScript数据结构和算法笔记'],
-    ['/frontend/JavaScript/《你不知道的js》笔记', '《你不知道的js》笔记']
+    ['/frontend/JavaScript/《你不知道的js》笔记', '《你不知道的js》笔记'],
+    ['/frontend/JavaScript/原型', '原型'],
   ]
 };
 
@@ -128,6 +129,9 @@ const articlesCatalog = {
     ['/articles/平安夜', '平安夜'],
     ['/articles/生活', '生活'],
     ['/articles/元旦', '元旦'],
+    ['/articles/小草岂可撼大树', '小草岂可撼大树'],
+    ['/articles/长津湖和照相机', '长津湖和照相机'],
+    ['/articles/结束的2021', '结束的2021'],
   ]
 }
 
