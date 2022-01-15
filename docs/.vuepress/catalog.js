@@ -14,6 +14,7 @@ const JsCatalog = {
     ['/frontend/JavaScript/JavaScript数据结构和算法笔记', 'JavaScript数据结构和算法笔记'],
     ['/frontend/JavaScript/《你不知道的js》笔记', '《你不知道的js》笔记'],
     ['/frontend/JavaScript/原型', '原型'],
+    ['/frontend/JavaScript/EventLoop', '浏览器中的EventLoop'],
   ]
 };
 
