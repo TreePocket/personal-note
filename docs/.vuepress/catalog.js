@@ -15,6 +15,7 @@ const JsCatalog = {
     ['/frontend/JavaScript/《你不知道的js》笔记', '《你不知道的js》笔记'],
     ['/frontend/JavaScript/原型', '原型'],
     ['/frontend/JavaScript/EventLoop', '浏览器中的EventLoop'],
+    ['/frontend/JavaScript/bind和call和apply', 'bind、call和apply'],
   ]
 };
 
