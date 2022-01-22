@@ -16,6 +16,7 @@ const JsCatalog = {
     ['/frontend/JavaScript/原型', '原型'],
     ['/frontend/JavaScript/EventLoop', '浏览器中的EventLoop'],
     ['/frontend/JavaScript/bind和call和apply', 'bind、call和apply'],
+    ['/frontend/JavaScript/手写拖拽', '手写拖拽'],
   ]
 };
 
