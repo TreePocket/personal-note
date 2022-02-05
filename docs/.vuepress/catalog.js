@@ -18,6 +18,7 @@ const JsCatalog = {
     ['/frontend/JavaScript/bind和call和apply', 'bind、call和apply'],
     ['/frontend/JavaScript/手写拖拽', '手写拖拽'],
     ['/frontend/JavaScript/对象的两种创建方式', '对象的两种创建方式'],
+    ['/frontend/JavaScript/深拷贝', '深拷贝和浅拷贝'],
   ]
 };
 
