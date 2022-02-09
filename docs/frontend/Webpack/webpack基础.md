@@ -43,7 +43,9 @@ module.exports = {
 
 ### loader
 
-**loader** 让 webpack 能够去处理那些非 JavaScript 文件（webpack 自身只理解 JavaScript）。loader 可以将所有类型的文件转换为 webpack 能够处理的有效[模块](https://www.webpackjs.com/concepts/modules)，然后你就可以利用 webpack 的打包能力，对它们进行处理。
+#### 概念
+
+**loader** 让 webpack 能够去处理那些非 JavaScript 文件（webpack 自身只理解 JavaScript和json文件）。loader 可以将所有类型的文件转换为 webpack 能够处理的有效[模块](https://www.webpackjs.com/concepts/modules)，然后你就可以利用 webpack 的打包能力，对它们进行处理。
 
 ```md
 ::: warning
@@ -51,7 +53,7 @@ module.exports = {
 :::
 ```
 
-在 webpack 的配置中 **loader** 有两个目标：
+在 webpack 的配置中 **loader** 有两个属性：
 
 1. `test` 属性，用于标识出应该被对应的 loader 进行转换的某个或某些文件。
 2. `use` 属性，表示进行转换时，应该使用哪个 loader。
@@ -91,6 +93,54 @@ module.exports = config;
 
 Loader 是有先后顺序的，**从下到上**，**从右到左**
 
+#### 使用方式
+
+在应用程序中有两种loader的使用方式：配置方式和内联方式
+
+- 配置方式（推荐）
+
+`module.rules`允许在webpack配置中指定多个loader,loader按照从下到上(或从右到左)取值，以下面这个为例，从sass-loader开始执行，然后继续执行css-loader，最后以style-loader结束。
+
+```js
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          // [style-loader](/loaders/style-loader)
+          { loader: 'style-loader' },
+          // [css-loader](/loaders/css-loader)
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true
+            }
+          },
+          // [sass-loader](/loaders/sass-loader)
+          { loader: 'sass-loader' }
+        ]
+      }
+    ]
+  }
+};
+
+```
+
+- 内联方式（一般不用，不容易统一维护）
+
+#### 特性
+
+- loader支持链式调用
+- loader可以同步，也可以是异步的
+- loader可以通过options对象配置
+
+#### 解析loader
+
+loader遵循标准模块解析规则。多数情况下，loader将从模块路径加载(通常是从npm install,node_modules进行加载)
+
+loader模块预期导出为一个函数，并且编写为Node.js兼容的js,通常使用npm进行管理loader,也可以将应用程序中的文件作为自定义loader,按照约定，loader通常被命名为`xxx-loader`
+
 ### plugins（插件）
 
 loader 被用于转换某些类型的模块，而插件则可以用于执行范围更广的任务。插件的范围包括，从打包优化和压缩，一直到重新定义环境中的变量。
@@ -118,6 +168,32 @@ module.exports = config;
 ```
 
 webpack 提供许多开箱可用的插件！查阅我们的[插件列表](https://www.webpackjs.com/plugins)获取更多信息。
+
+```md
+::: tip
+如果在插件中使用了 webpack-sources 的package,要使用 require('webpack').sources 代替 require('webpack-sources')，避免持久缓存的版本冲突。
+:::
+```
+
+#### 插件剖析
+
+webpack插件是一个具有 `apply` 方法的 JavaScript 对象。`apply` 方法会被webpack compiler调用，并且在整个编译生命周期都可以访问compiler对象
+
+```js
+const pluginName = 'ConsoleLogOnBuildWebpackPlugin';
+
+class ConsoleLogOnBuildWebpackPlugin {
+  apply(compiler){
+    compiler.hooks.run.tap(pluginName,(compilation) => {
+      console.log('webpack 构件正在启动');
+    })
+  }
+}
+
+modules.exports = ConsoleLogOnBuildWebpackPlugin;
+```
+
+
 
 ## 基本使用
 

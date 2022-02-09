@@ -42,9 +42,9 @@ module.exports = {
         catlog.NodeCatalog,
         catlog.NetWorkCatalog,
         catlog.CSSCatalog,
-        ['/frontend/Engineering/', '前端工程化'],
-        ['/frontend/Performance/', '前端性能优化'],
-        ['/frontend/React/', 'React专题'],
+        // ['/frontend/Engineering/', '前端工程化'],
+        // ['/frontend/Performance/', '前端性能优化'],
+        // ['/frontend/React/', 'React专题'],
         catlog.VueCatalog,
         catlog.WebpackCatalog
         // ['/frontend/Webpack/', 'Webpack的那些事'],
