@@ -42,6 +42,7 @@ module.exports = {
         catlog.NodeCatalog,
         catlog.NetWorkCatalog,
         catlog.CSSCatalog,
+        catlog.WebGisCatalog,
         // ['/frontend/Engineering/', '前端工程化'],
         // ['/frontend/Performance/', '前端性能优化'],
         // ['/frontend/React/', 'React专题'],

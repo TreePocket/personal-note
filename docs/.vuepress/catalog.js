@@ -22,6 +22,13 @@ const JsCatalog = {
   ]
 };
 
+const WebGisCatalog = {
+  title: 'WebGis',
+  children: [
+    ['/frontend/WebGis/openlayers', 'openlayers'],
+  ]
+}
+
 const LinuxCatalog = {
   title: 'Linux',
   children: [
@@ -154,5 +161,6 @@ module.exports = {
   DivideConquer,
   articlesCatalog,
   BackTracking,
-  DFS
+  DFS,
+  WebGisCatalog
 }
