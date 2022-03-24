@@ -144,6 +144,7 @@ const articlesCatalog = {
     ['/articles/小草岂可撼大树', '小草岂可撼大树'],
     ['/articles/长津湖和照相机', '长津湖和照相机'],
     ['/articles/结束的2021', '结束的2021'],
+    ['/articles/春季杂谈', '春季杂谈'],
   ]
 }
 
